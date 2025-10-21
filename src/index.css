@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-mila-bg font-sans text-gray-800;
+  }
+}
+
+@layer utilities {
+  .shadow-neumorph {
+    box-shadow: 6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff;
+  }
+
+  .shadow-neumorph-inset {
+    box-shadow: inset 4px 4px 10px #d1d9e6, inset -4px -4px 10px #ffffff;
+  }
+
+  .shadow-neumorph-sm {
+    box-shadow: 3px 3px 6px #d1d9e6, -3px -3px 6px #ffffff;
+  }
+
+  .shadow-neumorph-glow {
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.3), 6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F8FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6C63FF, #A28BFE);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5a51e6, #8f76eb);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-bobbing {
+  animation: bobbing 2s ease-in-out infinite;
+}
+
+.button-press {
+  transition: all 0.15s ease;
+}
+
+.button-press:active {
+  transform: scale(0.95);
+  box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff;
+}
